@@ -10,7 +10,7 @@ This post talks about technical hurdles that I encountered and solutions for the
 
 The fastest way is to explicitly ask LLMs to give responses in JSON format, but this still can be violated. So we need stronger ways to enforce the schema. Enter **Pydantic validation** and **constrained decoding.** 
 
-## Pydantic validation
+## Reactive Solution: Pydantic Validation
 
 ### How it Works: "Parsing, not just Validating"
 
@@ -58,7 +58,7 @@ If an LLM outputs a messy JSON, Pydantic acts as the "Bouncer":
 - *Self-Correction Loops:* If Pydantic catches a validation error (e.g., the LLM forgot a required field), you can actually send the error message back to the LLM and ask it to fix its own mistake. This is a core pattern in "Agentic" workflows.
 
 
-## Constrained Decoding
+## Preventive Solution: Constrained Decoding
 
 While Pydantic validates the data *after* the LLM has already generated it, **Constrained Decoding** (also known as **Guided Generation**) forces the LLM to follow a specific structure *while it is still thinking*.
 
