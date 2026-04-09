@@ -4,10 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Victor — a software engineer writing about topics I find interesting or challenging.
+Hi, I'm Victor — an ML engineer writing about topics I find interesting or challenging.
 
 This blog covers:
-- Software architecture and system design
+- DL/ML topics
+- ML system design
 - Backend development and APIs
 - Developer tools and productivity
 - Lessons learned from building real systems
