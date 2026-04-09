@@ -6,11 +6,23 @@ date: 2026-04-08
 
 This post talks about technical hurdles that I encountered and solutions for them. This is a simple collection of the issues and they are not sorted or split by any particular criteria.
 
+## Table of Contents
+
+- [How do you handle LLMs that fail to follow a JSON schema?](#how-do-you-handle-llms-that-fail-to-follow-a-json-schema)
+  - [Reactive Solution: Pydantic Validation](#reactive-solution-pydantic-validation)
+    - [How it Works: "Parsing, not just Validating"](#how-it-works-parsing-not-just-validating)
+    - [A Simple Example](#a-simple-example)
+    - [Why Pydantic is critical for AI agents/workflows?](#why-pydantic-is-critical-for-ai-agentsworkflows)
+  - [Preventive Solution: Constrained Decoding](#preventive-solution-constrained-decoding)
+    - [The Technical Mechanism: Logit Bias](#the-technical-mechanism-logit-bias)
+    - [Common Tools](#common-tools)
+  - [Table comparing two solutions](#table-comparing-two-solutions)
+
 # How do you handle LLMs that fail to follow a JSON schema?
 
 The fastest way is to explicitly ask LLMs to give responses in JSON format, but this still can be violated. So we need stronger ways to enforce the schema. Enter **Pydantic validation** and **constrained decoding.** 
 
-## Reactive Solution: Pydantic Validation
+## Reactive Solution: [Pydantic Validation](https://docs.pydantic.dev/latest/)
 
 ### How it Works: "Parsing, not just Validating"
 
