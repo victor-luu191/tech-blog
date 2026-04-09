@@ -1,0 +1,21 @@
+---
+layout: home
+title: Posts
+---
+
+<ul class="post-list">
+  {% assign articles = site.articles | sort: "date" | reverse %}
+  {% for article in articles %}
+  <li>
+    <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
+    <h3>
+      <a class="post-link" href="{{ article.url | prepend: site.baseurl }}">
+        {{ article.title | escape }}
+      </a>
+    </h3>
+    {% if article.excerpt %}
+      {{ article.excerpt }}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

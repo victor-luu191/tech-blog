@@ -1,0 +1,33 @@
+title: Victor's Tech Blog
+description: Technical articles on software engineering, architecture, and development.
+baseurl: "/tech-blog"
+url: "https://victor-luu191.github.io"
+
+theme: minima
+
+author:
+  name: Victor Luu
+
+minima:
+  skin: auto  # auto switches between light/dark based on OS preference
+
+header_pages:
+  - about.md
+
+show_excerpts: true
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: post
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
