@@ -3,18 +3,37 @@ layout: home
 title: Posts
 ---
 
+<h2>Industry</h2>
 <ul class="post-list">
-  {% assign articles = site.articles | sort: "date" | reverse %}
-  {% for article in articles %}
+  {% assign industry_posts = site.industry | sort: "date" | reverse %}
+  {% for post in industry_posts %}
   <li>
-    <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
     <h3>
-      <a class="post-link" href="{{ article.url | prepend: site.baseurl }}">
-        {{ article.title | escape }}
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        {{ post.title | escape }}
       </a>
     </h3>
-    {% if article.excerpt %}
-      {{ article.excerpt }}
+    {% if post.excerpt %}
+      {{ post.excerpt }}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Academic</h2>
+<ul class="post-list">
+  {% assign academic_posts = site.academic | sort: "date" | reverse %}
+  {% for post in academic_posts %}
+  <li>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <h3>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        {{ post.title | escape }}
+      </a>
+    </h3>
+    {% if post.excerpt %}
+      {{ post.excerpt }}
     {% endif %}
   </li>
   {% endfor %}

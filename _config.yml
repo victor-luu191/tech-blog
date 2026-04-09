@@ -17,14 +17,22 @@ header_pages:
 show_excerpts: true
 
 collections:
-  articles:
+  industry:
     output: true
-    permalink: /articles/:name/
+    permalink: /industry/:name/
+  academic:
+    output: true
+    permalink: /academic/:name/
 
 defaults:
   - scope:
       path: ""
-      type: articles
+      type: industry
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: academic
     values:
       layout: post
 
