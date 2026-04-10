@@ -6,10 +6,10 @@ date: 2026-04-08
 
 This post talks about technical hurdles that I encountered and solutions for them. This is a simple collection of the issues and they are not sorted or split by any particular criteria.
 
-<details markdown="1">
-<summary><strong>Table of Contents</strong></summary>
+**Table of Contents**
 
-- [How do you handle LLMs that fail to follow a JSON schema?](#how-do-you-handle-llms-that-fail-to-follow-a-json-schema)
+- <details markdown="1"><summary><a href="#how-do-you-handle-llms-that-fail-to-follow-a-json-schema">How do you handle LLMs that fail to follow a JSON schema?</a></summary>
+
   - [Reactive Solution: Pydantic Validation](#reactive-solution-pydantic-validation)
     - [How it Works: "Parsing, not just Validating"](#how-it-works-parsing-not-just-validating)
     - [A Simple Example](#a-simple-example)
@@ -18,13 +18,17 @@ This post talks about technical hurdles that I encountered and solutions for the
     - [The Technical Mechanism: Logit Bias](#the-technical-mechanism-logit-bias)
     - [Common Tools](#common-tools)
   - [Table comparing two solutions](#table-comparing-two-solutions)
-- [How do you prevent "hallucination loops" in long-running agent tasks?](#how-do-you-prevent-hallucination-loops-in-long-running-agent-tasks)
+
+  </details>
+
+- <details markdown="1"><summary><a href="#how-do-you-prevent-hallucination-loops-in-long-running-agent-tasks">How do you prevent "hallucination loops" in long-running agent tasks?</a></summary>
+
   - [What Works](#what-works)
   - [Practical Loop Breaker](#practical-loop-breaker)
   - [Guardrails to Add](#guardrails-to-add)
   - [Example Pattern](#example-pattern)
 
-</details>
+  </details>
 
 # How do you handle LLMs that fail to follow a JSON schema?
 
