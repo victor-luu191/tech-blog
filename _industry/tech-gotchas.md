@@ -6,7 +6,7 @@ date: 2026-04-08
 
 This post talks about technical hurdles that I encountered and solutions for them. This is a simple collection of the issues and they are not sorted or split by any particular criteria.
 
-<details>
+<details markdown="1">
 <summary><strong>Table of Contents</strong></summary>
 
 - [How do you handle LLMs that fail to follow a JSON schema?](#how-do-you-handle-llms-that-fail-to-follow-a-json-schema)
